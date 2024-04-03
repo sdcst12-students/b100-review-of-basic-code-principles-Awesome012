@@ -13,3 +13,10 @@ Your program should ask the user for
 * The program will calculate the amount of interest earned and display it.
 * Appropriate formatting of the output is a requirement for this assignment
 """
+p = input("please input the initial investment: ")
+r = input("please input annual interest rate as a percentage: ")
+while True: 
+  l = input("are you inputting time in years, months or days?")
+  if l == "years":
+    
+t = input("please input the amount of time passed in years: ")
