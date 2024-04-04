@@ -22,4 +22,36 @@ rate: 5%
 final balance: 1320.68
 
 """
+while True:
+  p = input("please input the annual investment: ")
+  try:
+    float(p)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
 
+while True:
+  r = input("please input the annual investment rate (as a percentage): ")
+  try:
+    float(r)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
+while True:
+  t = input("please input the number of years: ")
+  try:
+    float(t)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+p = float(p)
+r = float(r)
+t = float(t)
+r2 = r / 100
+
+answer = p * ((((1 + r2) ** t) -1) / r2)
+print(answer)

@@ -13,10 +13,61 @@ Your program should ask the user for
 * The program will calculate the amount of interest earned and display it.
 * Appropriate formatting of the output is a requirement for this assignment
 """
-p = input("please input the initial investment: ")
-r = input("please input annual interest rate as a percentage: ")
+while True:
+  p = input("please input the initial investment: ")
+  try:
+    float(p)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
+while True:
+  r = input("\nplease input annual interest rate as a percentage: ")
+  try:
+    float(r)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
 while True: 
-  l = input("are you inputting time in years, months or days?")
+  l = input("\nare you inputting time in years, months or days?: ")
   if l == "years":
-    
-t = input("please input the amount of time passed in years: ")
+    t = input("please input the lenth of time in years: ")
+    y = "years"
+    try:
+      float(t)
+    except:
+      print("that wasnt a number, try again") 
+    else:
+      break
+  elif l == "months":
+    t = input("please input the lenth of time in months: ")
+    y = "months"
+    try:
+      float(t)
+    except:
+      print("that wasnt a number, try again") 
+    else:
+      break
+  elif l == "days":
+    t = input("\nplease input the lenth of time in days: ")
+    y = "days"
+    try:
+      float(t)
+    except:
+      print("\nthat wasnt a number, try again") 
+    else:
+      break
+  else:
+    print("please type only 'years', 'months', or 'days'")
+
+p = float(p)
+r = float(r)
+t = float(t)
+
+r2 = r / 100
+
+answer = p * r2 * t
+print(f"your interest will be {answer}")
