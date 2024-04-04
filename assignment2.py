@@ -20,8 +20,8 @@ annual investment: 100
 rate: 5%
 10 years
 final balance: 1320.68
-
 """
+
 while True:
   p = input("please input the annual investment: ")
   try:
@@ -43,15 +43,22 @@ while True:
 while True:
   t = input("please input the number of years: ")
   try:
-    float(t)
+    int(t)
   except:
     print("\nthat wasnt a number, try again") 
   else:
     break
+
 p = float(p)
 r = float(r)
-t = float(t)
+t = int(t)
 r2 = r / 100
+memory = p
+p = 0
 
-answer = p * ((((1 + r2) ** t) -1) / r2)
-print(answer)
+for i in range(t):
+  p = p + memory
+  interest = p * r2
+  p = p + interest
+  p = round(p,2)
+  print(p)

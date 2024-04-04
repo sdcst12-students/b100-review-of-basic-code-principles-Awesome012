@@ -22,3 +22,48 @@ How many months will it take him to pay off the car.  How much interest has he p
 He will have paid 21711.60 in interest
 """
 
+while True:
+  d = input("please input the initial debt: ")
+  try:
+    float(d)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
+while True:
+  r = input("please input the annual interest rate (as a percentage): ")
+  try:
+    float(r)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
+while True:
+  p = input("please input the annual payment: ")
+  try:
+    float(p)
+  except:
+    print("\nthat wasnt a number, try again") 
+  else:
+    break
+
+p = float(p)
+r = float(r)
+d = float(d)
+r2 = r / 100
+t = 0
+check = 0
+while True:
+    t = t + 1
+    interest = d * r2
+    d = d + interest
+    d = d - p
+    check = check + interest
+    d = round(d,2)
+    if d <= 0:
+        check = round(check,2)
+        print(f"you have to pay an interest of {check}")
+        print(f"it took {t} months to pay it")
+        break
